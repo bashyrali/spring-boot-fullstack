@@ -1,7 +1,7 @@
 services:
   db:
     container_name: some-postgres
-    image: postgres
+    image: postgres:15
     environment:
       POSTGRES_USER: bashyr
       POSTGRES_PASSWORD: admin1234
@@ -16,7 +16,7 @@ services:
 
   bashyr-api:
     container_name: bashyr-api
-    image: bashyrali/bashyr-api
+    image: bashyrali/bashyr-api:latest
     environment:
        SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/customer
     ports:
