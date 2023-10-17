@@ -1,0 +1,35 @@
+services:
+  db:
+    container_name: some-postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: bashyr
+      POSTGRES_PASSWORD: admin1234
+      PGDATA: /data/postgres
+    volumes:
+      - db:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+  bashyr-api:
+    container_name: bashyr-api
+    image: bashyrali/bashyr-api
+    environment:
+       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/customer
+    ports:
+      - "8080:8080"
+    networks:
+      - db
+    depends_on:
+      - db
+    restart: unless-stopped
+
+networks:
+  db:
+    driver: bridge
+
+volumes:
+  db:
