@@ -5,7 +5,7 @@
 
     {
       "name": "bashyr-api",
-      "image": "bashyrali/bashyr-api:latest",
+      "image": "bashyrali/bashyr-api:02.11.2023.15.47.46",
       "essential": true,
       "memory": 512,
       "portMappings": [
