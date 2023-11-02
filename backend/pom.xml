@@ -18,6 +18,8 @@
     <properties>
         <java.version>17</java.version>
         <docker.username>bashyrali</docker.username>
+        <docker.image.name>bashyr-api</docker.image.name>
+        <docker.image.tag/>
     </properties>
     <dependencies>
 
@@ -185,10 +187,6 @@
                 <configuration>
                     <from>
                         <image>eclipse-temurin:17</image>
-                        <auth>
-                            <username>bashyrali</username>
-                            <password>7123840ba</password>
-                        </auth>
                         <platforms>
                             <platform>
                                 <architecture>arm64</architecture>
@@ -201,14 +199,10 @@
                         </platforms>
                     </from>
                     <to>
-                        <image>docker.io/${docker.username}/${project.artifactId}:${project.version}</image>
+                        <image>docker.io/${docker.username}/${docker.image.name}:${docker.image.tag}</image>
                         <tags>
                             <tag>latest</tag>
                         </tags>
-                        <auth>
-                            <username>bashyrali</username>
-                            <password>7123840ba</password>
-                        </auth>
                     </to>
                 </configuration>
             </plugin>
